@@ -1,3 +1,5 @@
 fastapi
 uvicorn
 sqlalchemy
+fastapi[standard]
+tinydb

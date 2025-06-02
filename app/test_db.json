@@ -1,0 +1,11 @@
+{"_default":
+{"1": {"type": "apple", "count": 7},
+  "2": {"type": "orange", "count": 7},
+  "3": {"type": "watermelon", "count": 7},
+  "4": {"type": "strawberry", "count": 7},
+  "5": {"type": "banana", "count": 7},
+  "6": {"type": "lemon", "count": 7},
+  "7": {"type": "blue berry", "count": 7},
+  "8": {"type": "pineapple", "count": 7}
+}
+}
