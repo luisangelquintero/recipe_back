@@ -1,11 +1,1 @@
-{"_default":
-{"1": {"type": "apple", "count": 7},
-  "2": {"type": "orange", "count": 7},
-  "3": {"type": "watermelon", "count": 7},
-  "4": {"type": "strawberry", "count": 7},
-  "5": {"type": "banana", "count": 7},
-  "6": {"type": "lemon", "count": 7},
-  "7": {"type": "blue berry", "count": 7},
-  "8": {"type": "pineapple", "count": 7}
-}
-}
+{"_default": {"10": {"title": "Spaghetti Carbonara", "ingredients": ["200g spaghetti", "100g pancetta", "2 large eggs", "50g parmesan cheese", "Salt", "Black pepper"], "instructions": "Cook spaghetti. Fry pancetta. Mix eggs and cheese. Combine all with pasta off heat.", "difficulty": "Medium", "time": 20, "submitted_by": "user1@mail.com", "timestamp": "2025-05-19T12:00:00Z", "id": "a-1-b2"}, "11": {"title": "Spaghetti Carbonara", "ingredients": ["200g spaghetti", "100g pancetta", "2 large eggs", "50g parmesan cheese", "Salt", "Black pepper"], "instructions": "Cook spaghetti. Fry pancetta. Mix eggs and cheese. Combine all with pasta off heat.", "difficulty": "Medium", "time": 20, "submitted_by": "user1@mail.com", "timestamp": "2025-05-19T12:00:00Z", "id": "a-1-b2"}}}

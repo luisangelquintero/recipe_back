@@ -7,6 +7,7 @@ class Recipe(BaseModel):
     ingredients: list[str]
     instructions: str
     difficulty: str
-    effort: int
+    time: int
     submitted_by: str
     timestamp: str
+    id: str
