@@ -1,13 +1,12 @@
 
+from typing import Optional
 from pydantic import BaseModel
 
 
 class Recipe(BaseModel):
     title: str
-    ingredients: list[str]
+    ingredients: str
     instructions: str
     difficulty: str
-    time: int
-    submitted_by: str
-    timestamp: str
-    id: str
+    minutes: int
+
