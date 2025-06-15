@@ -1,1 +1,1 @@
-{"_default": {"1": {"title": "Test", "ingredients": "Test", "instructions": "Sasasa", "difficulty": "Medium", "minutes": 2}, "2": {"title": "1", "ingredients": "1", "instructions": "Njndnjd", "difficulty": "Medium", "minutes": 2}, "3": {"title": "Definitive test testing ", "ingredients": "All", "instructions": "Dwdwdw3", "difficulty": "Hard", "minutes": 3}}}
+{"_default": {"1": {"id": "01", "title": "test title", "difficulty": "Medium", "ingredients": "TEST INGEDIENTS", "minutes": 2, "instructions": "String"}}}

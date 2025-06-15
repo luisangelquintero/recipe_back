@@ -4,9 +4,12 @@ from pydantic import BaseModel
 
 
 class Recipe(BaseModel):
+    id: str
     title: str
-    ingredients: str
-    instructions: str
     difficulty: str
+    ingredients: str
     minutes: int
+    instructions: str
+
+
 
