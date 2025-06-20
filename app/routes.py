@@ -18,6 +18,7 @@ def add_recipe(recipe: Recipe):
 def get_recipes():
     return db.all()
 
+
 @recipe_router.post("/recipes/deleteAll")
 def delete_recipes():
     return db.truncate()
