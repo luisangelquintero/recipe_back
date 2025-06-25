@@ -10,6 +10,7 @@ class Recipe(BaseModel):
     minutes: int
     instructions: str
     imagePath: str
+    timestamp: str
 
 
 
