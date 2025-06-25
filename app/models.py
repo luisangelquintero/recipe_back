@@ -1,5 +1,4 @@
 
-from typing import Optional
 from pydantic import BaseModel
 
 
@@ -10,6 +9,7 @@ class Recipe(BaseModel):
     ingredients: str
     minutes: int
     instructions: str
+    imagePath: str
 
 
 
