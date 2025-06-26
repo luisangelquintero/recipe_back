@@ -10,7 +10,7 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 
 def sanitize_filename(text: str) -> str:
-    text = text.lower().replace(" ", "_")
+    text = text.lower().replace(" ", "-")
     return re.sub(r"[^a-z0-9\-]", "", text)
 
 
