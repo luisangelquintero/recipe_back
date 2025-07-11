@@ -8,7 +8,7 @@ import os
 
 recipe_router = APIRouter()
 
-db = TinyDB('test_db.json')
+db = TinyDB('recipes_dt.json')
 IMAGE_DB = "./fake_gcs/uploads/image_meta.json"
 
 
