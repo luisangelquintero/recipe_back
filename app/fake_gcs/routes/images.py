@@ -9,7 +9,7 @@ from datetime import datetime
 
 storage_router = APIRouter()
 UPLOAD_DIR = "./fake_gcs/uploads"
-IMAGE_DB = "./uploads/image_meta.json"
+IMAGE_DB = "./fake_gcs/uploads/image_meta.json"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 
@@ -44,7 +44,7 @@ async def upload_image(file: UploadFile = File(...), recipe_title: str = Form(..
     with open(file_location, "wb") as f:
         f.write(await file.read())
     save_image_meta(filename=unique_filename, recipe_title=recipe_title)
-    return {"filename:": file.filename, "url": f"/images/{file.filename}"}
+    return {"filename:": file.filename, "url": f"/images/{unique_filename}"}
 
 
 @storage_router.get("/images/{filename}")
