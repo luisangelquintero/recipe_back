@@ -5,5 +5,4 @@ from app.routers.images import storage_router
 
 app = FastAPI()
 app.include_router(recipe_router)
-
 app.include_router(storage_router)
