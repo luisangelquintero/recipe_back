@@ -1,5 +1,6 @@
 import json
 
+from app.config import UPLOAD_DIR, IMAGE_DB
 from fastapi import APIRouter, File, Form, UploadFile
 from fastapi.responses import FileResponse
 from uuid import uuid4
@@ -8,8 +9,7 @@ import os
 from datetime import datetime
 
 storage_router = APIRouter()
-UPLOAD_DIR = "./fake_gcs/uploads"
-IMAGE_DB = "./fake_gcs/uploads/image_meta.json"
+
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 

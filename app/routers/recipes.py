@@ -1,7 +1,8 @@
 import json
+from app.config import  IMAGE_DB
 from fastapi import APIRouter
-from models import Recipe
 from tinydb import TinyDB
+from app.models import Recipe
 from app.routers.images import sanitize_filename, UPLOAD_DIR
 import os
 
@@ -9,7 +10,6 @@ import os
 recipe_router = APIRouter()
 
 db = TinyDB('recipes_dt.json')
-IMAGE_DB = "./fake_gcs/uploads/image_meta.json"
 
 
 @recipe_router.post("/recipes")
