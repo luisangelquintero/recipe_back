@@ -2,7 +2,7 @@ import json
 from fastapi import APIRouter
 from models import Recipe
 from tinydb import TinyDB
-from fake_gcs.routes.images import sanitize_filename, UPLOAD_DIR
+from app.routers.images import sanitize_filename, UPLOAD_DIR
 import os
 
 

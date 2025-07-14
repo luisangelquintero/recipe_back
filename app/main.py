@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from routes import recipe_router
-from fake_gcs.routes.images import storage_router
+from app.routers.recipes import recipe_router
+from app.routers.images import storage_router
 
 
 app = FastAPI()
