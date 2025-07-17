@@ -1,10 +1,11 @@
 import json
-from app.config import  IMAGE_DB
+import os
 from fastapi import APIRouter
 from tinydb import TinyDB
+
+from app.utils import sanitize_filename
+from app.config import IMAGE_DB, UPLOAD_DIR
 from app.models import Recipe
-from app.routers.images import sanitize_filename, UPLOAD_DIR
-import os
 
 
 recipe_router = APIRouter()
