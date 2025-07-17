@@ -2,6 +2,7 @@ import json
 import os
 from fastapi import APIRouter
 from tinydb import TinyDB
+from pathlib import Path
 
 from app.utils import sanitize_filename
 from app.config import IMAGE_DB, UPLOAD_DIR
@@ -9,8 +10,9 @@ from app.models import Recipe
 
 
 recipe_router = APIRouter()
-
-db = TinyDB('recipes_dt.json')
+DATA_PATH = Path(__file__).resolve().parent.parent / "data"
+DATA_PATH.mkdir(parents=True, exist_ok=True)
+db = TinyDB(DATA_PATH / "recipes_dt.json")
 
 
 @recipe_router.post("/recipes")

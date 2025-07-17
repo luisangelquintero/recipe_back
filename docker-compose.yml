@@ -9,7 +9,8 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./app:/app
-      - ./app/uploads:/app/uploads  # for uploaded images
+      - ./app:/code/app                  # Sync app source code
+      - ./app/uploads:/code/app/uploads # Sync uploaded images
+      - ./data:/code/data               # Optional: if you store recipes_dt.json here
     environment:
       - ENV=development
