@@ -14,30 +14,34 @@ DATA_PATH = Path(__file__).resolve().parent.parent / "data"
 DATA_PATH.mkdir(parents=True, exist_ok=True)
 db = TinyDB(DATA_PATH / "recipes_dt.json")
 
+#Todo Create recipes endpoint and change this one for recipe
 
-@recipe_router.post("/recipes")
-def add_recipe(recipe: Recipe):
-    db.insert(recipe.model_dump())
 
-    # mark image as permanent
+def process_image_data(recipe: Recipe):
     try:
         with open(IMAGE_DB, 'r') as f:
-            meta = json.load(f)
+            image_metadata = json.load(f)
         image_name = recipe.imagePath.split("/")[-1]
-        if image_name in meta:
-            meta[image_name]["temporary"] = False
 
-            if not meta[image_name]["title"]:
+        if image_name in image_metadata:
+            image_metadata[image_name]["temporary"] = False
 
+            if not image_metadata[image_name]["title"]:
                 image_name_with_title = f'{sanitize_filename(recipe.title)}{image_name}'
-                meta[image_name_with_title] = meta.pop(image_name)
-                meta[image_name_with_title]["title"] = recipe.title
+                image_metadata[image_name_with_title] = image_metadata.pop(image_name)
+                image_metadata[image_name_with_title]["title"] = recipe.title
                 os.rename(f"{UPLOAD_DIR}/{image_name}", f"{UPLOAD_DIR}/{image_name_with_title}")
 
         with open(IMAGE_DB, "w") as f:
-            json.dump(meta, f, indent=2)
+            json.dump(image_metadata, f, indent=2)
     except Exception as e:
         print(f"⚠️ Couldn't update image metadata: {e}")
+        
+
+@recipe_router.post("/recipe")
+def add_recipe(recipe: Recipe):
+    process_image_data(recipe)
+    db.insert(recipe.model_dump())
     return {"message": "Recipe added!"}
 
 
